@@ -1,5 +1,6 @@
 import { StateCreator, create } from 'zustand'
 import { persist } from 'zustand/middleware';
+import { customSessionStorage } from '../storages/session-storage.storage';
 
 type PersonState = {
     firstName: string;
@@ -20,8 +21,13 @@ const storeAPI: StateCreator<PersonState & Actions> = (set) => ({
 
 })
 
+
+
 export const usePersonStore = create<PersonState & Actions>()(
     persist(
         storeAPI
-        , { name: 'person-storage' })
+        , {
+            name: 'person-storage',
+            storage: customSessionStorage
+        })
 )
