@@ -1,7 +1,8 @@
 import { DragEvent, useState } from "react";
 import Swal from "sweetalert2";
-import { useTaskStore } from "../../stores";
-import { TaskStatus } from "../../types";
+
+import { TaskStatus } from "../types";
+import { useTaskStore } from "../stores";
 
 export const useTaskHook = (status: TaskStatus) => {
   const isDragging = useTaskStore(state => !!state.draggingTaskId);

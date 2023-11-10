@@ -3,8 +3,7 @@ import { Task } from "../../types";
 import SingleTask from "./SingleTask";
 
 import classNames from "classnames";
-
-import { useTaskHook } from "../hooks/useTaskHook";
+import { useTaskHook } from "../../hooks/useTaskHook";
 
 interface Props {
   title: string;
